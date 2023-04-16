@@ -1,0 +1,33 @@
+링크를 누르면 내가 지정한 링크로 이동하는 코드예제(예시 w3chools)
+
+import { StatusBar } from 'expo-status-bar';
+import { Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+export default function App() {
+  const handlePress = () => {
+    Linking.openURL('https://www.w3schools.com/');
+  };
+
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={handlePress}>
+        <Text style={styles.text}>https://www.w3schools.com/</Text>
+      </TouchableOpacity>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 24,
+    color: 'blue',
+    textDecorationLine: 'underline',
+  },
+});
